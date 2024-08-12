@@ -1,9 +1,9 @@
 node_modules/
-package/
-package-lock/
+package
+package-lock
 
 API/node_modules/
 API/package/
 API/package-lock/
-API/Install_plugin_input
-API/Install_node_express.js
+API/Install_plugin_input/
+API/Install_node_express.js/
