@@ -2,148 +2,171 @@ const colecaoInstrumentos = [
     {
         id: 1,
         nome: "Bateria",
-        marca: "Yamara",
-        status: "Vendido",
+        marca: "Yamaha",
+        cor: "Verde-claro",
+        estoque: 4
     },
     {
         id: 2,
         nome: "Bateria",
         marca: "Michael",
-        status: "Em estoque",
+        cor: "Preto",
+        estoque: 3
     },
     {
         id: 3,
         nome: "Bateria",
         marca: "Pearl",
-        status: "Vendido"
+        cor: "Preto",
+        estoque: 35
     },
     {
         id: 4,
         nome: "Bateria",
         marca: "RMV",
-        status: "Em estoque"
+        cor: "Marrom",
+        estoque: 2
     },
     {
         id: 5,
         nome: "Teclado",
-        marca: "Yamara",
-        status: "Vendido"
+        marca: "Yamaha",
+        cor: "Vermelho",
+        estoque: 6
     },
     {
         id: 6,
         nome: "Teclado",
         marca: "Casio",
-        status: "Em estoque",
+        cor: "Preto",
+        estoque: 10
     },
     {
         id: 7,
         nome: "Teclado",
         marca: "Roland",
-        status: "Em estoque",
+        cor: "Branco",
+        estoque: 82
     },
     {
         id: 8,
         nome: "Violão",
         marca: "Gibson",
-        status: "Em estoque"
+        cor: "Preto",
+        estoque: 20
     },
     {
         id: 9,
         nome: "Violão",
         marca: "Fender",
-        status: "Em estoque"
+        cor: "Madeira",
+        estoque: 100
     },
     {
         id: 10,
         nome: "Violão",
         marca: "Yamaha",
-        status: "Vendido"
+        cor: "Verde",
+        estoque: 14
     },
     {
         id: 11,
         nome: "Violão",
         marca: "Takamine",
-        status: "Em estoque",
+        cor: "Preto",
+        estoque: 21
     },
     {
         id: 12,
         nome: "Violão",
         marca: "Ibanez",
-        status: "Em estoque",
+        cor: "Madeira-claro",
+        estoque: 20
     },
     {
         id: 13,
         nome: "Guitarra",
         marca: "Jackson",
-        status: "Vendido"
+        cor: "Preto",
+        estoque: 40
     },
     {
         id: 14,
         nome: "Guitarra",
         marca: "Takamine",
-        status: "Em estoque"
+        cor: "Azul",
+        estoque: 32
     },
     {
         id: 15,
         nome: "Guitarra",
-        marca: "Yamara",
-        status: "Vendido"
+        marca: "Yamaha",
+        cor: "Vermelho",
+        estoque: 10
     },
     {
         id: 16,
         nome: "Guitarra",
         marca: "Fender",
-        status: "Vendido",
+        cor: "Azul-escuro",
+        estoque: 9
     },
     {
         id: 17,
         nome: "Baixo",
         marca: "Rickenbacker",
-        status: "Em estoque",
+        cor: "Preto",
+        estoque: 20
     },
     {
         id: 18,
         nome: "Baixo",
         marca: "Music Man",
-        status: "Vendido"
+        cor: "Vermelho",
+        estoque: 3
     },
     {
         id: 19,
         nome: "Baixo",
-        marca: " Gibson",
-        status: "Em estoque"
+        marca: "Gibson",
+        cor: "Azul",
+        estoque: 5
     },
     {
         id: 20,
         nome: "Baixo",
         marca: "Tagima",
-        status: "Vendido"
+        cor: "Marrom-escuro",
+        estoque: 3
     },
     {
         id: 21,
-        nome: "Saxofones",
+        nome: "Saxofone",
         marca: "Keilwerth",
-        status: "Em estoque"
+        cor: "Amarelo-dourado",
+        estoque: 2
     },
     {
         id: 22,
-        nome: "Saxofones",
+        nome: "Saxofone",
         marca: "Yanagisawa",
-        status: "Vendido"
+        cor: "Amarelo-dourado",
+        estoque: 0
     },
     {
         id: 23,
-        nome: "Saxofones",
+        nome: "Saxofone",
         marca: "Selmer",
-        status: "Em estoque"
+        cor: "Cinza",
+        estoque: 1
     },
     {
         id: 24,
-        nome: "Saxofones",
+        nome: "Saxofone",
         marca: "Yamaha",
-        status: "Vendido"
+        cor: "Preto",
+        estoque: 80
     }
-
-]
+];
 
 exports.colecaoInstrumentos = colecaoInstrumentos;

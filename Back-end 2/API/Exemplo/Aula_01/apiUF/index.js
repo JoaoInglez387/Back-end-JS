@@ -1,57 +1,32 @@
-const  express = require('express');
-const colecaoUf = require('./dados/dados.js');
+import express from 'express';
+import { buscarUfs, buscarUfPorId, buscarUfsPorNome } from './servicos/servico.js';
 
 const app = express();
 
 app.get('/ufs', (req, res) => {
-    res.json(colecaoUf.colecaoUf);
+    const nomeUf = req.query.busca;
+    const resultado = nomeUf ? buscarUfsPorNome(nomeUf) : buscarUfs();
+    if (resultado.length > 0) {
+        res.json(resultado);
+    }
+    else {
+        res.status(404).send({ "Erro": "Nenhuma UF encontra"});
+    }
 });
 
 app.get('/ufs/:iduf', (req, res) => {
-    const idUF= parseInt(req.params.iduf);
-    let mensagemErro = '';
-    let uf;
-
-    if (!(isNaN(idUF))) {
-        uf = colecaoUf.colecaoUf.find(u => u.id === idUF);
-        if (!uf) {
-            mensagemErro = 'UF não encontrada!';
-        }
-        else {
-            mensagemErro = 'Requisição inválida!';
-        }
-    }
+    const uf= buscarUfPorId(req.params.iduf);
 
     if (uf) {
         res.json(uf);
     }
+    else if (isNaN(parseInt(req.params.iduf))) {
+        res.status(400).send({"Erro": "Requisição inválida"});
+    }
     else {
-        res.status(404).json({"Erro": mensagemErro});
+        res.status(404).json({"Erro": "UF não encotrada"});
     }
 });
-
-/*app.get('/ufs/:siglauf', (req, res) => {
-    const siglaUF= req.params.siglauf;
-    let mensagemErro = '';
-    let uf;
-
-    if (!(isNaN(siglaUF))) {
-        uf = colecaoUf.colecaoUf.find(u => u.uf === siglaUF);
-        if (!uf) {
-            mensagemErro = 'Sigla não encontrada!';
-        }
-        else {
-            mensagemErro = 'Requisição inválida!';
-        }
-    }
-
-    if (uf) {
-        res.json(uf);
-    }
-    else {
-        res.status(404).json({"Erro": mensagemErro});
-    }
-});*/
 
 app.listen(8080, () => {
     let data = new Date();
