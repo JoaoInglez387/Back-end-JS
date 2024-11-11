@@ -1,7 +1,6 @@
 {
-  "name": "javascript_js",
+  "name": "api_ipca",
   "version": "1.0.0",
-  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,9 +8,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
+  "type": "module",
   "dependencies": {
-    "express": "^4.19.2",
-    "readline-sync": "^1.4.10"
-  },
-  "description": ""
+    "express": "^4.21.1"
+  }
 }
