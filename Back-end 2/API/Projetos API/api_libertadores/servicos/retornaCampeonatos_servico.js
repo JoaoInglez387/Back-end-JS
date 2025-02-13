@@ -41,4 +41,3 @@ export async function retornaCampeonatosTime(time) {
     conexao.release();
     return campeonatos;
 }
-
