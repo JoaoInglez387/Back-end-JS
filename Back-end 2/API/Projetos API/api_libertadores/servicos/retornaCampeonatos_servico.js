@@ -11,6 +11,7 @@ export async function retornaCampeonatos() {
     const query = await conexao.query(
         'SELECT id, campeao, vice, ano FROM campeonatos');
     const campeonatos = executaQuery(conexao, query);
+    console.log(campeonatos);
     conexao.release();
     return campeonatos;
 }
