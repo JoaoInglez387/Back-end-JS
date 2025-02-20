@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { cadastrarUsuario } from './servico/cadastro_servico';
+import { ValidaUsuario } from './validacao/valida';
 
 const app = new express();
 
@@ -10,15 +11,13 @@ app.use(cors());
 app.post('/usuarios', async (req, res) => {
     const { nome, email, telefone } = req.body;
 
-    if (typeof nome !== 'undefined' || typeof email !== 'undefined' || typeof telefone !== 'undefined') {
-        return res.status(400).json({ Error: 'Todos os campos tem que está preenchidos!' });
+    const usuarioValido = ValidaUsuario(nome, email, telefone);
+
+    if (usuarioValido.status) {
+        await cadastrarUsuario(nome, email, telefone);
+        res.status(204).json({mesangem: usuarioValido.mensagem});
     } else {
-        try {
-            const resultado = await cadastrarUsuario(nome, email, telefone);
-            res.status(201).json({mesangem: 'Usuário cadastro com sucesso!'})
-        } catch (error) {
-            res.status(500).json({Erro: 'Erro ao cadastrar usuário!', error});
-        }
+        return res.status(400).json({ mesangem: usuarioValido.mensagem});
     }
 });
 
