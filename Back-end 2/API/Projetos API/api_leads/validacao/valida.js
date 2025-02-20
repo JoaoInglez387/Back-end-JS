@@ -11,14 +11,14 @@ function validaEmail(email) {
 }
 
 function validaTelefone(telefone) {
-    const regexTelefone = ^\([1-9]{2}\) (?:[2-8]|9[0-9])[0-9]{3}\-[0-9]{4}$;
+    const regexTelefone = /^\(?\d{2}\)?\s?\d{4,5}[-\s]?\d{4}$/;
     const isvalid = regexTelefone.test(telefone);
 }
 
 export function ValidaUsuario(nome, email, telefone) {
     const nomeValido = validaNome(nome);
     const emailValido = validaEmail(email);
-    const telefoneValido = validaEmail(telefone);
+    const telefoneValido = validaTelefone(telefone);
 
     const usuarioValido = nomeValido && emailValido && telefoneValido;
 
