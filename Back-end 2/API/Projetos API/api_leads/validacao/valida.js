@@ -1,6 +1,6 @@
 function validaNome(nome) {
-    const regexNome = /^[a-zA-Z-ÿ\s\-']+$/;
-    const isvalid = nome.length >= 2 && regexNome.test(nome);
+    const regexNome = /^[a-zA-ZÀ-ÿ\s\-']+$/;
+    const isvalid = nome.length >= 2 && regexNome.test(nome); // 
     return isvalid;
 }
 
@@ -11,8 +11,9 @@ function validaEmail(email) {
 }
 
 function validaTelefone(telefone) {
-    const regexTelefone = /^\(?\d{2}\)?\s?\d{4,5}[-\s]?\d{4}$/;
+    const regexTelefone = /(\(?\d{2}\)?\s)?(\d{4,5}\-\d{4})/g;
     const isvalid = regexTelefone.test(telefone);
+    return isvalid;
 }
 
 export function ValidaUsuario(nome, email, telefone) {
